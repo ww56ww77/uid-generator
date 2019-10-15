@@ -15,8 +15,8 @@
  */
 package com.baidu.fsg.uid;
 
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import lombok.Getter;
+import lombok.ToString;
 import org.springframework.util.Assert;
 
 /**
@@ -25,6 +25,8 @@ import org.springframework.util.Assert;
  * 
  * @author yutianbao
  */
+@Getter
+@ToString
 public class BitsAllocator {
     /**
      * Total 64 bits
@@ -88,49 +90,4 @@ public class BitsAllocator {
     public long allocate(long deltaSeconds, long workerId, long sequence) {
         return (deltaSeconds << timestampShift) | (workerId << workerIdShift) | sequence;
     }
-    
-    /**
-     * Getters
-     */
-    public int getSignBits() {
-        return signBits;
-    }
-
-    public int getTimestampBits() {
-        return timestampBits;
-    }
-
-    public int getWorkerIdBits() {
-        return workerIdBits;
-    }
-
-    public int getSequenceBits() {
-        return sequenceBits;
-    }
-
-    public long getMaxDeltaSeconds() {
-        return maxDeltaSeconds;
-    }
-
-    public long getMaxWorkerId() {
-        return maxWorkerId;
-    }
-
-    public long getMaxSequence() {
-        return maxSequence;
-    }
-
-    public int getTimestampShift() {
-        return timestampShift;
-    }
-
-    public int getWorkerIdShift() {
-        return workerIdShift;
-    }
-    
-    @Override
-    public String toString() {
-        return ToStringBuilder.reflectionToString(this, ToStringStyle.SHORT_PREFIX_STYLE);
-    }
-    
 }

@@ -21,7 +21,7 @@ import com.baidu.fsg.uid.utils.ValuedEnum;
  * WorkerNodeType
  * <li>CONTAINER: Such as Docker
  * <li>ACTUAL: Actual machine
- * 
+ *
  * @author yutianbao
  */
 public enum WorkerNodeType implements ValuedEnum<Integer> {
@@ -36,7 +36,7 @@ public enum WorkerNodeType implements ValuedEnum<Integer> {
     /**
      * Constructor with field of type
      */
-    private WorkerNodeType(Integer type) {
+    WorkerNodeType(Integer type) {
         this.type = type;
     }
 
