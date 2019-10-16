@@ -2,6 +2,7 @@ package com.baidu.fsg.uid.config;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.NestedConfigurationProperty;
 
 /**
  * @author mayuhan
@@ -11,13 +12,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @Data
 public class UidGeneratorProperties {
 
-	private String driverClassName;
 
-	private String url;
-
-	private String username;
-
-	private String password;
+	@NestedConfigurationProperty
+	private UidGeneratorDatabaseProperties datasource = new UidGeneratorDatabaseProperties();
 
 	// timeBits、workerBits、seqBits三个值相加为63，剩余一位为sign，固定1bit符号标识，使生成的UID为正数
 	// 时间长度
@@ -40,4 +37,16 @@ public class UidGeneratorProperties {
 
 	// 另外一种RingBuffer填充时机, 在Schedule线程中, 周期性检查填充。一般不使用这个属性，除非使用ID的频次固定。
 	private Integer scheduleInterval;
+
+	@Data
+	static class UidGeneratorDatabaseProperties{
+		private String driverClassName;
+
+		private String url;
+
+		private String username;
+
+		private String password;
+	}
+
 }

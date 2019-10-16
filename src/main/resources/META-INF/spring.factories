@@ -1,1 +1,2 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.baidu.fsg.uid.config.UidGeneratorAutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.baidu.fsg.uid.config.UidGeneratorAutoConfiguration,\
+  com.baidu.fsg.uid.config.UidMybatisConfig

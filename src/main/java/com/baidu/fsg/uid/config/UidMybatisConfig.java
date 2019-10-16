@@ -30,10 +30,10 @@ public class UidMybatisConfig implements EnvironmentAware {
     @Bean(name = "uidDataSource")
     public DataSource dataSource() {
         DruidDataSource dataSource = new DruidDataSource();
-        String dataUrl =environment.getProperty("baidu.uid.url");
-        String username = environment.getProperty("baidu.uid.username");
-        String password = environment.getProperty("baidu.uid.password");
-        String driverClassName =environment.getProperty("baidu.uid.driver-class-name");
+        String dataUrl =environment.getProperty("baidu.uid.datasource.url");
+        String username = environment.getProperty("baidu.uid.datasource.username");
+        String password = environment.getProperty("baidu.uid.datasource.password");
+        String driverClassName =environment.getProperty("baidu.uid.datasource.driver-class-name");
         dataSource.setUrl(dataUrl);
         dataSource.setDriverClassName(driverClassName);
         dataSource.setPassword(password);
