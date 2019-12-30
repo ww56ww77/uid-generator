@@ -17,6 +17,13 @@
         <jdk.version>1.8</jdk.version>
         <spring.version>4.2.5.RELEASE</spring.version>
         <slf4j-version>1.7.7</slf4j-version>
+        <commons-collections>4.4</commons-collections>
+        <commons-lang>3.9</commons-lang>
+        <logback>1.1.3</logback>
+        <mybatis-spring-boot>2.1.0</mybatis-spring-boot>
+        <lombok>1.18.10</lombok>
+        <mysql>8.0.17</mysql>
+        <druid>1.1.20</druid>
     </properties>
 
     <!-- Dependencies -->
@@ -51,15 +58,9 @@
 
         <!-- Apache Commons -->
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
-            <version>3.2.2</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>2.6</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${commons-lang}</version>
             <scope>provided</scope>
         </dependency>
 
@@ -67,7 +68,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.3</version>
+            <version>${logback}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
